@@ -1,0 +1,18 @@
+{% block create %}
+    <div style="text-align: center" class = "center">
+        <div class="form-popup" id="myDeleteForm" style="width: 100%; ">
+            <form method="POST" action="{% url 'blog:delete' %}" class="form-container">
+                {% csrf_token %}
+                <h1>Delete Blog</h1>
+
+                <div style = "text-align: left;width:100%">
+                    <label for id ="BlogName" style = "text-align: left;"><b>Blog Id: </b></label>
+                    <p>{{ form.bid }}</p>
+                </div>
+
+                <button type="submit" class="btn btn_delete">Delete</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{%  extends 'base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/css_styles.css" %}">
+{% endblock %}
+{% block content %}
+    <h1>Congratulations! You have successfully signed in.</h1>
+    <div class="btn-group">
+        <button class="button" onclick="openCreateForm()">Create</button>
+        <button class="button" onclick="openUpdateForm()">Update</button>
+        <button class="button" onclick="openDeleteForm()">Delete</button>
+        <button class="button" onclick="location.href='{% url 'blog:show' %}'">Show All Blogs</button>
+
+        <button class="signout-button" onclick="location.href='/logout'">Sign Out</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% include "create_blog.html" %}
+    {% include "update_blog.html" %}
+    {% include "delete_blog.html" %}
+
+
+    <script type="application/javascript" src="{% static "js/control.js" %}"></script>
+{% endblock %}

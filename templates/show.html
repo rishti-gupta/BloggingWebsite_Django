@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>All Blogs</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/show.css' %}"/>
+    </head>
+    <body>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+        <tr>
+            <th>User Name</th>
+            <th>Blog ID</th>
+            <th>Blog Name</th>
+            <th>Blog Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for blog in blogs %}
+            <tr>
+                <td>{{ blog.uname }}</td>
+                <td>{{ blog.bid }}</td>
+                <td>{{ blog.bname }}</td>
+                <td>{{ blog.bcontent }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    </body>
+</html>
